@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\AzureAISpeech.Client.props" />
+</Project>

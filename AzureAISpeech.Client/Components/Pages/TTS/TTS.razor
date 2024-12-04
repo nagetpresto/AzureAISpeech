@@ -1,0 +1,71 @@
+﻿@page "/TTS"
+
+@using AzureAISpeech.Server.Models.Master
+@using AzureAISpeech.Server.Services.Master
+@using AzureAISpeech.Server.Services.Master.Interfaces
+@using AzureAISpeech.Server.Services.Speech
+@using AzureAISpeech.Server.Services.Speech.Interfaces
+@rendermode InteractiveServer
+
+<PageTitle>Text to Speech</PageTitle>
+
+<h1>Text to Speech</h1>
+<hr />
+
+<div class="form-group row">
+    <div class="col-sm-3">
+        <label for="LanguageSelect" class="col-form-label">Language</label>
+    </div>
+    <div class="col-sm-9">
+        <select id="LanguageSelect" class="form-control" @bind="selectedLanguage">
+            <option value="">Select Language</option>
+            @foreach (var language in languages)
+            {
+                <option value="@language.Code">@language.Description</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-3">
+        <label for="TextInput" class="col-form-label">Text to Synthesize</label>
+    </div>
+    <div class="col-sm-9">
+        <textarea id="TextInput" class="form-control" rows="5" @bind="inputValue"></textarea>
+    </div>
+</div>
+
+<button class="btn btn-primary" @onclick="Click_Speak"
+        disabled="@(!IsButtonEnabled)">
+    Speak
+</button>
+
+@code {
+    private List<MasterLanguages> languages = new List<MasterLanguages>();
+    private string selectedLanguage;
+    private string inputValue;
+
+    [Inject] private IMasterLanguagesService MasterLanguagesService { get; set; }
+    [Inject] private ITTSService TTSService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        languages = await MasterLanguagesService.GetAllLanguagesAsync();
+    }
+
+    private bool IsButtonEnabled => !string.IsNullOrEmpty(selectedLanguage) && !string.IsNullOrEmpty(inputValue);
+
+    private async Task Click_Speak()
+    {
+        try
+        {
+            await TTSService.SpeakAsync(inputValue, selectedLanguage);
+            
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in TTS: {ex.Message}");
+        }
+    }
+}
