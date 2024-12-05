@@ -12,9 +12,6 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{13B217B4-454F-4983-ABF9-F47ACE367406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13B217B4-454F-4983-ABF9-F47ACE367406}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -24,5 +21,8 @@ Global
 		{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

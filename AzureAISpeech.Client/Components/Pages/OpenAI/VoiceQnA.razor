@@ -1,0 +1,173 @@
+﻿@page "/QNA"
+
+@using AzureAISpeech.Server.Models.Master
+@using AzureAISpeech.Server.Services.Master
+@using AzureAISpeech.Server.Services.Master.Interfaces
+@using AzureAISpeech.Server.Services.Speech
+@using AzureAISpeech.Server.Services.Speech.Interfaces
+@using System.Text.Json
+@inject ISTTService STTService
+@inject IMasterLanguagesService MasterLanguagesService
+@inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+
+<PageTitle>QnA</PageTitle>
+
+<h1>QnA</h1>
+<hr />
+
+<div class="form-group row">
+    <div class="col-sm-3">
+        <label for="LanguageSelect" class="col-form-label">Language</label>
+    </div>
+    <div class="col-sm-9">
+        <select id="LanguageSelect" class="form-control" @bind="selectedLanguage">
+            <option value="">Select Language</option>
+            @foreach (var language in languages)
+            {
+                <option value="@language.Description">@language.Description</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-3">
+        <button class="btn btn-primary" disabled="@(!IsButtonEnabled)" @onclick="StartSession">
+            Start Session
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sessionModal" tabindex="-1" role="dialog" aria-labelledby="sessionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sessionModalLabel">Session Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="CloseModal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <p><strong>Language :</strong> @selectedLanguage</p>
+                <br />
+
+                <div class="form-group row">
+                    <div>
+                        <textarea id="TextInput" class="form-control" rows="5" @bind="inputValue"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="text-center">
+                        <button class="@ButtonBgClass" @onclick="ToggleRecording" disabled="@(!IsButtonEnabled)">
+                            <span class="@ButtonIconClass"></span>
+                        </button>
+                    </div>
+                </div>                
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="CloseModal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<MasterLanguages> languages = new List<MasterLanguages>();
+    private string selectedLanguage;
+    private string selectedLanguageTTS => selectedLanguage == "" ? "" : languages.FirstOrDefault(lang => lang.Description == selectedLanguage)?.CodeTTS;
+    private string selectedLanguageSTT => selectedLanguage == "" ? "" : languages.FirstOrDefault(lang => lang.Description == selectedLanguage)?.CodeSTT;
+    private bool IsButtonEnabled => !string.IsNullOrEmpty(selectedLanguage);
+    private string inputValue = string.Empty;
+    private bool isRecording = false;
+    private string ButtonIconClass => isRecording ? "bi bi-stop-fill" : "bi bi-mic-fill";
+    private string ButtonBgClass => isRecording ? "btn btn-danger" : "btn btn-primary";
+
+    private List<Dictionary<string, string>> transcriptions = new List<Dictionary<string, string>>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        languages = await MasterLanguagesService.GetAllLanguagesAsync();
+    }
+
+    public async Task StartSession()
+    {
+        transcriptions.Clear();
+        inputValue = string.Empty;
+        Console.WriteLine($"languageTTS: {selectedLanguageTTS}");
+        Console.WriteLine($"languageSTT: {selectedLanguageSTT}");
+
+        await JSRuntime.InvokeVoidAsync("eval", "$(document).ready(function() { $('#sessionModal').modal('show'); });");
+    }
+
+    public async Task CloseModal()
+    {
+        await JSRuntime.InvokeVoidAsync("eval", "$(document).ready(function() { $('#sessionModal').modal('hide'); });");
+    }
+
+    private async Task ToggleRecording()
+    {
+        isRecording = !isRecording;
+        Console.WriteLine("isrecording: " + isRecording);
+
+        try
+        {
+            if (isRecording)
+            {
+                await STTService.StartRecordingAsync(UpdateTranscription, selectedLanguageSTT);
+            }
+            else
+            {
+                STTService.CancelRecording();
+                ConstructTextarea();
+            }
+
+            StateHasChanged();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("");
+            Console.WriteLine($"Error in STT Page: {ex.Message}");
+        }
+
+    }
+
+    private void UpdateTranscription(string transcription)
+    {
+        if (isRecording)
+        {
+            inputValue = transcription;
+            Console.WriteLine("result: " + inputValue);
+
+        }
+    }
+
+    public async void ConstructTextarea(){
+        var result = new Dictionary<string, string>
+        {
+            { "user", inputValue },
+            { "assistant", "" }
+        };
+        transcriptions.Add(result);
+
+        Console.WriteLine("Result List: " + JsonSerializer.Serialize(transcriptions));
+
+        var transcriptionText = "";
+        foreach (var entry in transcriptions)
+        {
+            transcriptionText += $"user => {entry["user"]}\n";
+            transcriptionText += $"assistant => {entry["assistant"]}\n";
+        }
+
+        inputValue = transcriptionText;
+
+        await InvokeAsync(StateHasChanged);
+    }
+}

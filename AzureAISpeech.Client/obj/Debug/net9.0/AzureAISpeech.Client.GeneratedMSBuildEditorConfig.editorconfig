@@ -32,12 +32,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/STT/STT.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTVFRcU1RULnJhem9y
+[C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/OpenAI/VoiceQnA.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xPcGVuQUlcVm9pY2VRbkEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/TTS/TTS.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUVFNcVFRTLnJhem9y
+[C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/OpenAI/VoiceQnASession.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xPcGVuQUlcVm9pY2VRbkFTZXNzaW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/Speech/STT.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTcGVlY2hcU1RULnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/Speech/TTS.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTcGVlY2hcVFRTLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bilqi/OneDrive/Desktop/AzureAISpeech/AzureAISpeech.Client/Components/Pages/Weather.razor]
