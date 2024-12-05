@@ -10,3 +10,4 @@ C:\Users\Bilqi\OneDrive\Desktop\AzureAISpeech\AzureAISpeech.Server\obj\Debug\net
 C:\Users\Bilqi\OneDrive\Desktop\AzureAISpeech\AzureAISpeech.Server\obj\Debug\net9.0\refint\AzureAISpeech.Server.dll
 C:\Users\Bilqi\OneDrive\Desktop\AzureAISpeech\AzureAISpeech.Server\obj\Debug\net9.0\AzureAISpeech.Server.pdb
 C:\Users\Bilqi\OneDrive\Desktop\AzureAISpeech\AzureAISpeech.Server\obj\Debug\net9.0\ref\AzureAISpeech.Server.dll
+C:\Users\Bilqi\OneDrive\Desktop\AzureAISpeech\AzureAISpeech.Server\obj\Debug\net9.0\AzureAISpeech.Server.sourcelink.json

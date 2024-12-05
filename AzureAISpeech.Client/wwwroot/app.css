@@ -62,3 +62,7 @@ h1:focus {
 .form-group {
     margin-bottom: 20px;
 }
+
+.bi {
+    height: auto !important;
+}

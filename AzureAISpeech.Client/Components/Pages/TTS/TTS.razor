@@ -5,6 +5,8 @@
 @using AzureAISpeech.Server.Services.Master.Interfaces
 @using AzureAISpeech.Server.Services.Speech
 @using AzureAISpeech.Server.Services.Speech.Interfaces
+@inject ITTSService TTSService
+@inject IMasterLanguagesService MasterLanguagesService
 @rendermode InteractiveServer
 
 <PageTitle>Text to Speech</PageTitle>
@@ -21,7 +23,7 @@
             <option value="">Select Language</option>
             @foreach (var language in languages)
             {
-                <option value="@language.Code">@language.Description</option>
+                <option value="@language.CodeTTS">@language.Description</option>
             }
         </select>
     </div>
@@ -38,16 +40,13 @@
 
 <button class="btn btn-primary" @onclick="Click_Speak"
         disabled="@(!IsButtonEnabled)">
-    Speak
+    <span class="bi bi-megaphone-fill"></span>
 </button>
 
 @code {
     private List<MasterLanguages> languages = new List<MasterLanguages>();
     private string selectedLanguage;
     private string inputValue;
-
-    [Inject] private IMasterLanguagesService MasterLanguagesService { get; set; }
-    [Inject] private ITTSService TTSService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -65,7 +64,8 @@
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error in TTS: {ex.Message}");
+            Console.WriteLine("");
+            Console.WriteLine($"Error in TTS Page: {ex.Message}");
         }
     }
 }

@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/AzureAISpeech.Client/app.36b28bv6xy.css">
+    <StaticWebAssetEndpoint Include="_content/AzureAISpeech.Client/app.1liwlc91nb.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"36b28bv6xy"},{"Name":"integrity","Value":"sha256-CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0="},{"Name":"label","Value":"_content/AzureAISpeech.Client/app.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2946"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 15:46:30 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1liwlc91nb"},{"Name":"integrity","Value":"sha256-6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM="},{"Name":"label","Value":"_content/AzureAISpeech.Client/app.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2988"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 03:20:09 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AzureAISpeech.Client/app.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2946"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 15:46:30 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2988"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 03:20:09 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AzureAISpeech.Client/AzureAISpeech.Client.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AzureAISpeech.Client.eyq3svxomg.bundle.scp.css'))</AssetFile>

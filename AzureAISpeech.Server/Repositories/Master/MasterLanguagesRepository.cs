@@ -38,8 +38,9 @@ namespace AzureAISpeech.Server.Repositories.Master
                                 masterLanguages.Add(new MasterLanguages
                                 {
                                     ID = reader.GetInt32(0),
-                                    Code = reader.GetString(1),
-                                    Description = reader.GetString(2)
+                                    CodeTTS = reader.GetString(1),
+                                    CodeSTT = reader.GetString(2),
+                                    Description = reader.GetString(3)
                                 });
                             }
                         }
@@ -48,14 +49,20 @@ namespace AzureAISpeech.Server.Repositories.Master
             }
             catch (SqlException sqlEx)
             {
+                Console.WriteLine("[Repository] Db error: " + sqlEx.Message);
+                Console.WriteLine("");
                 throw new ApplicationException("[Repository] Db error.", sqlEx);
             }
             catch (TimeoutException timeoutEx)
             {
+                Console.WriteLine("[Repository] Db Timeout: " + timeoutEx.Message);
+                Console.WriteLine("");
                 throw new ApplicationException("[Repository] Db Timeout", timeoutEx);
             }
             catch (Exception ex)
             {
+                Console.WriteLine("[Repository] An unexpected error." + ex.Message);
+                Console.WriteLine("");
                 throw new ApplicationException("[Repository] An unexpected error.", ex);
             }
 

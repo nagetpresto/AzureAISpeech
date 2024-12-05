@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+4mcLAqSfaVGGICZ0Y06fL/oFeoeqM/VrOTlyL3G3wo=",
+  "Hash": "LrAfj/Vj2J6akgTCn/9kD0DyqbqjDz1B2e0lvmIwClc=",
   "Source": "AzureAISpeech.Client",
   "BasePath": "_content/AzureAISpeech.Client",
   "Mode": "Default",
@@ -437,12 +437,12 @@
       "OriginalItemSpec": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-36b28bv6xy.gz",
+      "Identity": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-1liwlc91nb.gz",
       "SourceId": "AzureAISpeech.Client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/AzureAISpeech.Client",
-      "RelativePath": "app#[.{fingerprint=36b28bv6xy}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=1liwlc91nb}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -451,8 +451,8 @@
       "RelatedAsset": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "gt41dv807k",
-      "Integrity": "pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM=",
+      "Fingerprint": "ihp40x9wqj",
+      "Integrity": "+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\wwwroot\\app.css"
@@ -1060,8 +1060,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "36b28bv6xy",
-      "Integrity": "CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=",
+      "Fingerprint": "1liwlc91nb",
+      "Integrity": "6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -2014,13 +2014,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "app.36b28bv6xy.css",
-      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-36b28bv6xy.gz",
+      "Route": "app.1liwlc91nb.css",
+      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-1liwlc91nb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000644329897"
+          "Quality": "0.000634517766"
         }
       ],
       "ResponseHeaders": [
@@ -2030,15 +2030,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1551"
+          "Value": "1575"
         },
         {
           "Name": "ETag",
-          "Value": "\"pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM=\""
+          "Value": "\"+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 15:46:30 GMT"
+          "Value": "Thu, 05 Dec 2024 03:20:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2058,13 +2058,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=\""
+          "Value": "W/\"6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "36b28bv6xy"
+          "Value": "1liwlc91nb"
         },
         {
           "Name": "label",
@@ -2072,12 +2072,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0="
+          "Value": "sha256-6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM="
         }
       ]
     },
     {
-      "Route": "app.36b28bv6xy.css",
+      "Route": "app.1liwlc91nb.css",
       "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2087,7 +2087,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2946"
+          "Value": "2988"
         },
         {
           "Name": "Content-Type",
@@ -2095,11 +2095,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=\""
+          "Value": "\"6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 15:46:30 GMT"
+          "Value": "Thu, 05 Dec 2024 03:20:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2109,7 +2109,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "36b28bv6xy"
+          "Value": "1liwlc91nb"
         },
         {
           "Name": "label",
@@ -2117,13 +2117,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0="
+          "Value": "sha256-6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM="
         }
       ]
     },
     {
-      "Route": "app.36b28bv6xy.css.gz",
-      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-36b28bv6xy.gz",
+      "Route": "app.1liwlc91nb.css.gz",
+      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-1liwlc91nb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2132,7 +2132,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1551"
+          "Value": "1575"
         },
         {
           "Name": "Content-Type",
@@ -2140,11 +2140,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM=\""
+          "Value": "\"+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 15:46:30 GMT"
+          "Value": "Thu, 05 Dec 2024 03:20:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2162,7 +2162,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "36b28bv6xy"
+          "Value": "1liwlc91nb"
         },
         {
           "Name": "label",
@@ -2170,18 +2170,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM="
+          "Value": "sha256-+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI="
         }
       ]
     },
     {
       "Route": "app.css",
-      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-36b28bv6xy.gz",
+      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-1liwlc91nb.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000644329897"
+          "Quality": "0.000634517766"
         }
       ],
       "ResponseHeaders": [
@@ -2191,15 +2191,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1551"
+          "Value": "1575"
         },
         {
           "Name": "ETag",
-          "Value": "\"pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM=\""
+          "Value": "\"+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 15:46:30 GMT"
+          "Value": "Thu, 05 Dec 2024 03:20:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2219,13 +2219,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=\""
+          "Value": "W/\"6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0="
+          "Value": "sha256-6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM="
         }
       ]
     },
@@ -2240,7 +2240,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2946"
+          "Value": "2988"
         },
         {
           "Name": "Content-Type",
@@ -2248,11 +2248,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0=\""
+          "Value": "\"6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 15:46:30 GMT"
+          "Value": "Thu, 05 Dec 2024 03:20:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2262,13 +2262,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-CykV26oP0wYgVldI4dypn9PGN8uIEnC7KpUNL9RINp0="
+          "Value": "sha256-6yRGlpSHZdOQKO4jNgPQSGQinszqJ709YYi112swHcM="
         }
       ]
     },
     {
       "Route": "app.css.gz",
-      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-36b28bv6xy.gz",
+      "AssetFile": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\obj\\Debug\\net9.0\\compressed\\hw4t6nh2wq-1liwlc91nb.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2277,7 +2277,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1551"
+          "Value": "1575"
         },
         {
           "Name": "Content-Type",
@@ -2285,11 +2285,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM=\""
+          "Value": "\"+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 04 Dec 2024 15:46:30 GMT"
+          "Value": "Thu, 05 Dec 2024 03:20:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2307,7 +2307,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pFeHyUa36U4djUxcDDpZI+EHZ233hB+gXDJfa88DngM="
+          "Value": "sha256-+vFHQbW/iheYpSeoxcxrt6MBpVCCrFbmPnm/NLJLBvI="
         }
       ]
     },

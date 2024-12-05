@@ -21,6 +21,8 @@ builder.Services.AddScoped<IMasterLanguagesService, MasterLanguagesService>();
 //speech
 builder.Services.AddScoped<ITTSRepository, TTSRepository>();
 builder.Services.AddScoped<ITTSService, TTSService>();
+builder.Services.AddScoped<ISTTRepository, STTRepository>();
+builder.Services.AddScoped<ISTTService, STTService>();
 
 
 var app = builder.Build();
@@ -29,7 +31,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

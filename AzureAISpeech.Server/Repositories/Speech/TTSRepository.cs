@@ -33,15 +33,16 @@ namespace AzureAISpeech.Server.Repositories.Speech
                     switch (result.Reason)
                     {
                         case ResultReason.SynthesizingAudioCompleted:
-                            Console.WriteLine("TTS OK: Successfully synthesized the message.");
                             break;
 
                         case ResultReason.Canceled:
                             var cancellation = SpeechSynthesisCancellationDetails.FromResult(result);
+                            Console.WriteLine("");
                             Console.WriteLine($"CANCELED: Reason={cancellation.Reason}");
 
                             if (cancellation.Reason == CancellationReason.Error)
                             {
+                                Console.WriteLine("");
                                 Console.WriteLine($"CANCELED: ErrorCode={cancellation.ErrorCode}");
                                 Console.WriteLine($"CANCELED: ErrorDetails=[{cancellation.ErrorDetails}]");
                                 Console.WriteLine("CANCELED: Did you set the speech resource key and region values?");
@@ -49,14 +50,18 @@ namespace AzureAISpeech.Server.Repositories.Speech
                             break;
 
                         default:
-                            throw new ApplicationException("Unexpected result from TTS.");
+                            Console.WriteLine("[Repository] Unexpected result from TTS.");
+                            Console.WriteLine("");
+                            throw new ApplicationException("[Repository] Unexpected result from TTS.");
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                throw new ApplicationException("[Repository] TTS Error.", ex);
+                Console.WriteLine("[Repository] Unexpected TTS Error: " + ex.Message);
+                Console.WriteLine("");
+                throw new ApplicationException("[Repository] Unexpected TTS Error.", ex);
             }
         }
     }

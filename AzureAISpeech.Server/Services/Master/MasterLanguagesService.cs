@@ -22,6 +22,9 @@ namespace AzureAISpeech.Server.Services.Master
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error retrieving data: " + ex.Message);
+                Console.WriteLine("");
+
                 throw new ApplicationException("[Services] Error retrieving data.", ex);
             }
         }

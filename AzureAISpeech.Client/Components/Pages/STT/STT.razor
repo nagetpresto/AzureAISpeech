@@ -1,0 +1,99 @@
+﻿@page "/STT"
+
+@using AzureAISpeech.Server.Models.Master
+@using AzureAISpeech.Server.Services.Master
+@using AzureAISpeech.Server.Services.Master.Interfaces
+@using AzureAISpeech.Server.Services.Speech
+@using AzureAISpeech.Server.Services.Speech.Interfaces
+@inject ISTTService STTService
+@inject IMasterLanguagesService MasterLanguagesService
+@rendermode InteractiveServer
+
+<PageTitle>Speech to Text</PageTitle>
+
+<h1>Speech to Text</h1>
+<hr />
+
+<div class="form-group row">
+    <div class="col-sm-3">
+        <label for="LanguageSelect" class="col-form-label">Language</label>
+    </div>
+    <div class="col-sm-9">
+        <select id="LanguageSelect" class="form-control" @bind="selectedLanguage">
+            <option value="">Select Language</option>
+            @foreach (var language in languages)
+            {
+                <option value="@language.CodeSTT">@language.Description</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="form-group row">
+    <div class="col-sm-3">
+        <button class="@ButtonBgClass" @onclick="ToggleRecording" disabled="@(!IsButtonEnabled)">
+            <span class="@ButtonIconClass"></span>
+        </button>
+    </div>
+
+    <div class="col-sm-9">
+        <textarea id="TextInput" class="form-control" rows="5" @bind="inputValue" readonly></textarea>
+    </div>
+</div>
+
+@code {
+    private List<MasterLanguages> languages = new List<MasterLanguages>();
+    private string selectedLanguage;
+    private string inputValue = string.Empty;
+    private bool isRecording = false;
+
+    private string ButtonIconClass => isRecording ? "bi bi-stop-fill" : "bi bi-mic-fill";
+    private string ButtonBgClass => isRecording ? "btn btn-danger" : "btn btn-primary";
+
+    private bool IsButtonEnabled => !string.IsNullOrEmpty(selectedLanguage);
+
+    protected override async Task OnInitializedAsync()
+    {
+        languages = await MasterLanguagesService.GetAllLanguagesAsync();
+    }
+
+    private async Task ToggleRecording()
+    {
+        isRecording = !isRecording;
+        Console.WriteLine("isrecording: " + isRecording);
+
+        try
+        {
+            if (isRecording)
+            {
+                inputValue = string.Empty;
+                await STTService.StartRecordingAsync(UpdateTranscription, selectedLanguage);
+            }
+            else
+            {
+                STTService.CancelRecording();
+            }
+
+            StateHasChanged();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("");
+            Console.WriteLine($"Error in STT Page: {ex.Message}");
+        }     
+        
+    }
+
+    private async void UpdateTranscription(string transcription)
+    {
+        if (isRecording)
+        {
+            inputValue = transcription;
+            // Console.WriteLine("result: " + inputValue);
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+}
