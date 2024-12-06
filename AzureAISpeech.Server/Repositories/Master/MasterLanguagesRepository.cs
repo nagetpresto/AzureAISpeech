@@ -51,19 +51,19 @@ namespace AzureAISpeech.Server.Repositories.Master
             {
                 Console.WriteLine("[Repository] Db error: " + sqlEx.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Repository] Db error.", sqlEx);
+                throw new ApplicationException("[Repository] Db error: " + sqlEx.Message);
             }
             catch (TimeoutException timeoutEx)
             {
                 Console.WriteLine("[Repository] Db Timeout: " + timeoutEx.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Repository] Db Timeout", timeoutEx);
+                throw new ApplicationException("[Repository] Db Timeout: " + timeoutEx.Message);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("[Repository] An unexpected error." + ex.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Repository] An unexpected error.", ex);
+                throw new ApplicationException("[Repository] An unexpected error." + ex.Message);
             }
 
             return masterLanguages;

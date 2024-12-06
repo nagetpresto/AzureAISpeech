@@ -59,9 +59,9 @@ namespace AzureAISpeech.Server.Repositories.Speech
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[Repository] Unexpected TTS Error: " + ex.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Repository] Unexpected TTS Error.", ex);
+                Console.WriteLine("[Repository] An unexpected error." + ex.Message);
+                throw new ApplicationException("[Repository] An unexpected error." + ex.Message);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿@page "/QNA"
+﻿@page "/STS"
 
 @using AzureAISpeech.Server.Models.Master
 @using AzureAISpeech.Server.Services.Master
@@ -6,14 +6,17 @@
 @using AzureAISpeech.Server.Services.Speech
 @using AzureAISpeech.Server.Services.Speech.Interfaces
 @using System.Text.Json
+@using Newtonsoft.Json
 @inject ISTTService STTService
+@inject ITTSService TTSService
+@inject IOpenAIService OpenAIService
 @inject IMasterLanguagesService MasterLanguagesService
 @inject IJSRuntime JSRuntime
 @rendermode InteractiveServer
 
-<PageTitle>QnA</PageTitle>
+<PageTitle>Speech to Speech</PageTitle>
 
-<h1>QnA</h1>
+<h1>Speech to Speech</h1>
 <hr />
 
 <div class="form-group row">
@@ -56,13 +59,13 @@
 
                 <div class="form-group row">
                     <div>
-                        <textarea id="TextInput" class="form-control" rows="5" @bind="inputValue"></textarea>
+                        <textarea id="TextInput" style="height: 220px;" class="form-control" rows="5" @bind="inputValue"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="text-center">
-                        <button class="@ButtonBgClass" @onclick="ToggleRecording" disabled="@(!IsButtonEnabled)">
+                        <button class="@ButtonBgClass" @onclick="Speak" disabled="@(!IsButtonEnabled)">
                             <span class="@ButtonIconClass"></span>
                         </button>
                     </div>
@@ -84,11 +87,18 @@
     private string selectedLanguageSTT => selectedLanguage == "" ? "" : languages.FirstOrDefault(lang => lang.Description == selectedLanguage)?.CodeSTT;
     private bool IsButtonEnabled => !string.IsNullOrEmpty(selectedLanguage);
     private string inputValue = string.Empty;
+    private string sttResult = string.Empty;
+    private string openAIResult = string.Empty;
     private bool isRecording = false;
+    private bool newQuest = false;
     private string ButtonIconClass => isRecording ? "bi bi-stop-fill" : "bi bi-mic-fill";
     private string ButtonBgClass => isRecording ? "btn btn-danger" : "btn btn-primary";
+    private int inputToken;
+    private int outputToken;
+    private int totalToken;
 
     private List<Dictionary<string, string>> transcriptions = new List<Dictionary<string, string>>();
+    private List<object> reqBodyOpenAI = new List<object>();
 
 
     protected override async Task OnInitializedAsync()
@@ -99,7 +109,18 @@
     public async Task StartSession()
     {
         transcriptions.Clear();
+        reqBodyOpenAI.Clear();
         inputValue = string.Empty;
+
+        var reqBody = new
+        {
+            role = "system",
+            content = "Act like you are an assistant located in Indonesia Jakarta with current datetime is " + DateTime.Now
+        };
+        reqBodyOpenAI.Add(reqBody);
+
+        Console.WriteLine("");
+        Console.WriteLine("session start...");
         Console.WriteLine($"languageTTS: {selectedLanguageTTS}");
         Console.WriteLine($"languageSTT: {selectedLanguageSTT}");
 
@@ -108,24 +129,33 @@
 
     public async Task CloseModal()
     {
+        Console.WriteLine("");
+        Console.WriteLine("session end...");
         await JSRuntime.InvokeVoidAsync("eval", "$(document).ready(function() { $('#sessionModal').modal('hide'); });");
     }
 
-    private async Task ToggleRecording()
+    private async Task Speak()
     {
         isRecording = !isRecording;
+        Console.WriteLine("");
         Console.WriteLine("isrecording: " + isRecording);
 
         try
         {
             if (isRecording)
             {
+                newQuest = true;
+                sttResult = string.Empty;
+                openAIResult = string.Empty;
                 await STTService.StartRecordingAsync(UpdateTranscription, selectedLanguageSTT);
             }
             else
             {
+                newQuest = false;
                 STTService.CancelRecording();
-                ConstructTextarea();
+                await RequestGPT();
+                await TTSService.SpeakAsync(openAIResult, selectedLanguageTTS);
+                await ConstructTextarea();
             }
 
             StateHasChanged();
@@ -134,40 +164,116 @@
         catch (Exception ex)
         {
             Console.WriteLine("");
-            Console.WriteLine($"Error in STT Page: {ex.Message}");
+            Console.WriteLine($"Error in QnA Page: {ex.Message}");
         }
 
     }
 
-    private void UpdateTranscription(string transcription)
+    public async Task RequestGPT(){
+        try
+        {
+            var reqBody = new
+            {
+                role = "user",
+                content = sttResult
+            };
+            reqBodyOpenAI.Add(reqBody);
+
+            Console.WriteLine("reqBody: " + JsonConvert.SerializeObject(reqBodyOpenAI, Formatting.Indented));
+
+            var (messageContent, totalTokens, promptTokens, completionTokens) = await OpenAIService.GetResponseGPT4(reqBodyOpenAI);
+            openAIResult = messageContent;
+            inputToken += promptTokens;
+            outputToken += completionTokens;
+            totalToken += totalTokens;
+
+            reqBody = new
+            {
+                role = "assistant",
+                content = openAIResult
+            };
+            reqBodyOpenAI.Add(reqBody);
+
+            Console.WriteLine("");
+            Console.WriteLine("gpt ans: " + messageContent);
+            Console.WriteLine("");
+            Console.WriteLine("input token: " + promptTokens);
+            Console.WriteLine("output token: " + completionTokens);
+            Console.WriteLine("cumulative: ");
+            Console.WriteLine("cum input token: " + inputToken);
+            Console.WriteLine("cum output token: " + outputToken);
+            // Console.WriteLine("total token: " + promptTokens);
+            // Console.WriteLine("cum total token: " + inputToken);
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("");
+            Console.WriteLine($"Error in QnA Page: {ex.Message}");
+        }
+    }
+
+    private async void UpdateTranscription(string transcription)
     {
+        var transcriptionText = "";
         if (isRecording)
         {
-            inputValue = transcription;
-            Console.WriteLine("result: " + inputValue);
+            sttResult = transcription;
+            Console.WriteLine("");
+            Console.WriteLine("user quest: " + sttResult);
+
+            
+            if (newQuest)
+            {
+
+                var result = new Dictionary<string, string>
+                {
+                    { "user", sttResult },
+                    { "assistant", "..."}
+                };
+                transcriptions.Add(result);
+
+                newQuest = false;
+
+            }
+            else{
+                var lastEntry = transcriptions.LastOrDefault();
+                lastEntry["user"] = sttResult;
+            }
+
+            foreach (var entry in transcriptions)
+            {
+                transcriptionText += $"user => {entry["user"]}\n";
+                transcriptionText += $"assistant => {entry["assistant"]}\n\n";
+            }
+
+            inputValue = transcriptionText;
 
         }
+
+        await InvokeAsync(StateHasChanged);
     }
 
-    public async void ConstructTextarea(){
-        var result = new Dictionary<string, string>
-        {
-            { "user", inputValue },
-            { "assistant", "" }
-        };
-        transcriptions.Add(result);
-
-        Console.WriteLine("Result List: " + JsonSerializer.Serialize(transcriptions));
-
+    public async Task ConstructTextarea()
+    {
         var transcriptionText = "";
+
+        var lastEntry = transcriptions.LastOrDefault();
+        if (lastEntry != null && lastEntry.ContainsKey("user"))
+        {
+            lastEntry["assistant"] = openAIResult;
+        }
+
+        // Console.WriteLine("textarea: " + JsonConvert.SerializeObject(transcriptions));
         foreach (var entry in transcriptions)
         {
             transcriptionText += $"user => {entry["user"]}\n";
-            transcriptionText += $"assistant => {entry["assistant"]}\n";
+            transcriptionText += $"assistant => {entry["assistant"]}\n\n";
         }
 
         inputValue = transcriptionText;
 
         await InvokeAsync(StateHasChanged);
     }
+
 }

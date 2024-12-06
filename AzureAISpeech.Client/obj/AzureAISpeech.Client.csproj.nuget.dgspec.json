@@ -54,9 +54,25 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Azure.AI.OpenAI": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Azure.Core": {
+              "target": "Package",
+              "version": "[1.44.1, )"
+            },
             "Microsoft.CognitiveServices.Speech": {
               "target": "Package",
               "version": "[1.41.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -147,6 +163,10 @@
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [

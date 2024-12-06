@@ -22,9 +22,9 @@ namespace AzureAISpeech.Server.Services.Speech
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[Services] Error requesting TTS: " + ex.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Services] Error requesting TTS", ex);
+                Console.WriteLine("[Services] Error requesting TTS: " + ex.Message);
+                throw new ApplicationException("[Services] Error requesting TTS: " + ex.Message);
             }
         }
     }

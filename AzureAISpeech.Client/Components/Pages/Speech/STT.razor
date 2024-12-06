@@ -60,6 +60,7 @@
     private async Task ToggleRecording()
     {
         isRecording = !isRecording;
+        Console.WriteLine("");
         Console.WriteLine("isrecording: " + isRecording);
 
         try
@@ -91,7 +92,6 @@
         {
             inputValue = transcription;
             // Console.WriteLine("result: " + inputValue);
-
             await InvokeAsync(StateHasChanged);
         }
     }

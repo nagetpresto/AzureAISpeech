@@ -10,9 +10,12 @@ using AzureAISpeech.Server.Services.Speech;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpClient();
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
 
 // master
 builder.Services.AddScoped<IMasterLanguagesRepository, MasterLanguagesRepository>();
@@ -23,6 +26,8 @@ builder.Services.AddScoped<ITTSRepository, TTSRepository>();
 builder.Services.AddScoped<ITTSService, TTSService>();
 builder.Services.AddScoped<ISTTRepository, STTRepository>();
 builder.Services.AddScoped<ISTTService, STTService>();
+builder.Services.AddScoped<IOpenAIRepository, OpenAIRepository>();
+builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 
 
 var app = builder.Build();

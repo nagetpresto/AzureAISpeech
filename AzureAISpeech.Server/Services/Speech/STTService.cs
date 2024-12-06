@@ -25,9 +25,9 @@ namespace AzureAISpeech.Server.Services.Speech
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[Services] Error requesting STT: " + ex.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Services] Error requesting STT: ", ex);
+                Console.WriteLine("[Services] Error requesting STT: " + ex.Message);
+                throw new ApplicationException("[Services] Error requesting STT: " + ex.Message);
             }
         }
 
@@ -40,9 +40,9 @@ namespace AzureAISpeech.Server.Services.Speech
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[Services] Error requesting STT: " + ex.Message);
                 Console.WriteLine("");
-                throw new ApplicationException("[Services] Error requesting STT: ", ex);
+                Console.WriteLine("[Services] Error requesting STT: " + ex.Message);
+                throw new ApplicationException("[Services] Error requesting STT: " + ex.Message);
             }
 
             

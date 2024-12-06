@@ -38,9 +38,9 @@ public class STTRepository : ISTTRepository
         }
         catch (Exception ex)
         {
-            Console.WriteLine("[Repository] STT start record: " + ex.Message);
             Console.WriteLine("");
-            throw new ApplicationException("[Repository] STT start record.", ex);
+            Console.WriteLine("[Repository] STT start record: " + ex.Message);
+            throw new ApplicationException("[Repository] STT start record: " + ex.Message);
         }
     }
 
@@ -53,8 +53,9 @@ public class STTRepository : ISTTRepository
         }
         catch (Exception ex)
         {
-            Console.WriteLine("[Repository] STT end record: " + ex.Message);
             Console.WriteLine("");
+            Console.WriteLine("[Repository] STT end record: " + ex.Message);
+            throw new ApplicationException("[Repository] STT end record: " + ex.Message);
         }
     }
 }
