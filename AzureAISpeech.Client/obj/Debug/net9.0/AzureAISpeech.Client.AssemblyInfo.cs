@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureAISpeech.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1016dadd6012fc12ec8aa4eed5b41435b8a985ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05d805a70322725fb1ca6d709a2d3e7550618bba")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureAISpeech.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureAISpeech.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

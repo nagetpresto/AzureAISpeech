@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -35,8 +35,15 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-12-05T06:48:03.798Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -48,8 +55,7 @@
               "RelativeToolTip": "AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwB4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:53:39.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T01:53:39.085Z"
             },
             {
               "$type": "Document",
@@ -59,18 +65,10 @@
               "RelativeDocumentMoniker": "AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
               "ToolTip": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
               "RelativeToolTip": "AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHUAAACoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAB7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-06T01:44:05.67Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             }
           ]
         }
