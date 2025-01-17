@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}|AzureAISpeech.Server\\AzureAISpeech.Server.csproj|c:\\users\\bilqi\\onedrive\\desktop\\azureaispeech\\azureaispeech.server\\services\\speech\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}|AzureAISpeech.Server\\AzureAISpeech.Server.csproj|solutionrelative:azureaispeech.server\\services\\speech\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|c:\\users\\bilqi\\onedrive\\desktop\\azureaispeech\\azureaispeech.client\\components\\pages\\openai\\voiceqna.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|solutionrelative:azureaispeech.client\\components\\pages\\openai\\voiceqna.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -22,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\appsettings.json",
               "RelativeDocumentMoniker": "AzureAISpeech.Client\\appsettings.json",
@@ -47,7 +51,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "OpenAIService.cs",
+              "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Server\\Services\\Speech\\OpenAIService.cs",
+              "RelativeDocumentMoniker": "AzureAISpeech.Server\\Services\\Speech\\OpenAIService.cs",
+              "ToolTip": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Server\\Services\\Speech\\OpenAIService.cs",
+              "RelativeToolTip": "AzureAISpeech.Server\\Services\\Speech\\OpenAIService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:05:32.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "OpenAIRepository.cs",
               "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
               "RelativeDocumentMoniker": "AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
@@ -59,16 +76,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "VoiceQnA.razor",
               "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
               "RelativeDocumentMoniker": "AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
               "ToolTip": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
               "RelativeToolTip": "AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAB7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-06T01:44:05.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T01:44:05.67Z"
             }
           ]
         }

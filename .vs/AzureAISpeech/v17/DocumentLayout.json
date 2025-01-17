@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|c:\\users\\bilqi\\onedrive\\desktop\\azureaispeech\\azureaispeech.client\\components\\pages\\openai\\voiceqna.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|solutionrelative:azureaispeech.client\\components\\pages\\openai\\voiceqna.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}|AzureAISpeech.Server\\AzureAISpeech.Server.csproj|c:\\users\\bilqi\\onedrive\\desktop\\azureaispeech\\azureaispeech.server\\repositories\\speech\\openairepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9A3C738-5E2C-4DEF-BDA8-4F64532D3424}|AzureAISpeech.Server\\AzureAISpeech.Server.csproj|solutionrelative:azureaispeech.server\\repositories\\speech\\openairepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|c:\\users\\bilqi\\onedrive\\desktop\\azureaispeech\\azureaispeech.client\\components\\pages\\speech\\stt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|solutionrelative:azureaispeech.client\\components\\pages\\speech\\stt.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13B217B4-454F-4983-ABF9-F47ACE367406}|AzureAISpeech.Client\\AzureAISpeech.Client.csproj|c:\\users\\bilqi\\onedrive\\desktop\\azureaispeech\\azureaispeech.client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -22,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\appsettings.json",
               "RelativeDocumentMoniker": "AzureAISpeech.Client\\appsettings.json",
@@ -38,37 +34,25 @@
               "IsPinned": true
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "STT.razor",
+              "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\Speech\\STT.razor",
+              "RelativeDocumentMoniker": "AzureAISpeech.Client\\Components\\Pages\\Speech\\STT.razor",
+              "ToolTip": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\Speech\\STT.razor",
+              "RelativeToolTip": "AzureAISpeech.Client\\Components\\Pages\\Speech\\STT.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-17T02:22:20.548Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OpenAIRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
-              "RelativeDocumentMoniker": "AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
-              "ToolTip": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
-              "RelativeToolTip": "AzureAISpeech.Server\\Repositories\\Speech\\OpenAIRepository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwB4AAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:53:39.085Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VoiceQnA.razor",
-              "DocumentMoniker": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
-              "RelativeDocumentMoniker": "AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
-              "ToolTip": "C:\\Users\\Bilqi\\OneDrive\\Desktop\\AzureAISpeech\\AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
-              "RelativeToolTip": "AzureAISpeech.Client\\Components\\Pages\\OpenAI\\VoiceQnA.razor",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAAALUAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-06T01:44:05.67Z",
-              "EditorCaption": ""
             }
           ]
         }
